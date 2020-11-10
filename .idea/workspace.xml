@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5efced67-0ce9-42ef-b993-24481bb03c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dialogs/change_password/dialog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dialogs/change_password/dialog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -171,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604970863751</updated>
-      <workItem from="1604970866802" duration="10525000" />
+      <workItem from="1604970866802" duration="13556000" />
     </task>
     <servers />
   </component>
@@ -179,6 +177,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="443" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604989422130">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="443" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1604989422130" />
     <state x="521" y="148" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604980462500">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -29,4 +30,8 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('administrator')->group(function () {
     Route::get('home', [App\Http\Controllers\AdministratorController::class, 'index'])->name('administrator.home');
+
+    Route::prefix('upload')->group(function () {
+        Route::get('poster', [UploadController::class, 'poster'])->name('administrator.upload.poster');
+    });
 });

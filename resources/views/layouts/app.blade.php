@@ -84,7 +84,7 @@
                             <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
                                  aria-labelledby="navbarDropdownUpload">
                                 {{-- Poster --}}
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('administrator.upload.poster') }}">
                                     Poster
                                 </a>
                             </div>
