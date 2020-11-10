@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\UploadController;
@@ -25,6 +26,10 @@ Auth::routes([
 ]);
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+Route::prefix('file')->group(function () {
+    Route::get('poster/{posterID}', [DisplayController::class, 'showPoster'])->name('show.poster');
+});
 
 Route::prefix('user')->group(function () {
     Route::post('change-password', [UserController::class, 'changePassword'])->name('user.change.password');

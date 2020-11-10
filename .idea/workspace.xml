@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5efced67-0ce9-42ef-b993-24481bb03c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/managers/poster.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/managers/poster.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/uploads/poster.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/uploads/poster.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,9 +187,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="521" y="148" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1604980462500" />
-    <state width="600" height="428" key="javadoc.popup" timestamp="1605015546740">
+    <state width="600" height="428" key="javadoc.popup" timestamp="1605025788134">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1605015546740" />
+    <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1605025788134" />
   </component>
 </project>

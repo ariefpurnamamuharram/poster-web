@@ -192,6 +192,9 @@
 <script src="{{ asset('popper/popper.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 
+{{-- Autosize script --}}
+<script src="{{ asset('autosize/autosize.js') }}"></script>
+
 {{-- Message modal script --}}
 @include('dialogs.message.dialog_script')
 

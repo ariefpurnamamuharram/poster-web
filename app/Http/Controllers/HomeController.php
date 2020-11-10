@@ -11,6 +11,7 @@ class HomeController extends Controller
     {
         $posters = Poster::orderBy('total_likes', 'DESC')
             ->orderBy('total_comments', 'DESC')
+            ->orderBy('updated_at', 'DESC')
             ->simplePaginate(9);
 
         return view('welcome', [
