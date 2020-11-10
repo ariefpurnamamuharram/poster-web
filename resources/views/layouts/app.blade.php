@@ -74,14 +74,14 @@
                 {{-- Left side of navbar --}}
                 <ul class="navbar-nav mr-auto">
                     {{-- Home --}}
-                    <a class="nav-link text-dark" href="{{ url('/') }}">Beranda</a>
+                    <a class="nav-link text-dark" href="{{ url('/') }}">Home</a>
 
                     @auth
                         {{-- Manager --}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownManager" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <span class="text-dark">Manajer Koleksi</span>
+                                <span class="text-dark">Collections Manager</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
@@ -97,7 +97,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownUpload" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <span class="text-dark">Unggah</span>
+                                <span class="text-dark">Uploads</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
@@ -118,14 +118,14 @@
                         @if (Route::has('login'))
                             {{-- Login --}}
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ route('login') }}">Masuk</a>
+                                <a class="nav-link text-dark" href="{{ route('login') }}">Login</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             {{-- Register --}}
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ route('register') }}">Daftar</a>
+                                <a class="nav-link text-dark" href="{{ route('register') }}">Register</a>
                             </li>
                         @endif
                     @else
@@ -140,14 +140,14 @@
                                 {{-- Change password --}}
                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                    data-target="#modalChangePassword">
-                                    Ganti password
+                                    Change password
                                 </a>
 
                                 {{-- Logout --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Keluar
+                                    Logout
                                 </a>
 
                                 {{-- Logout form --}}

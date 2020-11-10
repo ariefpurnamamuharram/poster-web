@@ -3,9 +3,10 @@
 @section('content')
     <div class="container">
         {{-- Poster section --}}
-        <section>
+        <section style="margin-top: 24px;">
             <h2 class="text-center">ePoster</h2>
 
+            <hr/>
 
             @if(count($posters) != 0)
                 <section>
