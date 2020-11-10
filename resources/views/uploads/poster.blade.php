@@ -6,7 +6,8 @@
             <div class="card-header">Unggah Poster Baru</div>
 
             <div class="card-body">
-                <form method="post" action="#" enctype="multipart/form-data">
+                <form method="post" action="{{ route('administrator.upload.poster.post') }}"
+                      enctype="multipart/form-data">
                     @csrf
 
                     {{-- Title --}}

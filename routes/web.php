@@ -32,6 +32,9 @@ Route::prefix('administrator')->group(function () {
     Route::get('home', [App\Http\Controllers\AdministratorController::class, 'index'])->name('administrator.home');
 
     Route::prefix('upload')->group(function () {
-        Route::get('poster', [UploadController::class, 'poster'])->name('administrator.upload.poster');
+        Route::prefix('poster')->group(function () {
+            Route::get('/', [UploadController::class, 'poster'])->name('administrator.upload.poster');
+            Route::post('post', [UploadController::class, 'uploadPoster'])->name('administrator.upload.poster.post');
+        });
     });
 });

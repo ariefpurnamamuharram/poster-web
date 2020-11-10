@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Poster;
 use App\Models\SiteSettings;
 
 return [
@@ -226,6 +227,7 @@ return [
         'SiteSettings' => SiteSettings::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
+        'Poster' => Poster::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
