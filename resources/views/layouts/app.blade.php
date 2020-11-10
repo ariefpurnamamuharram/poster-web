@@ -54,7 +54,7 @@
 <div id="app" class="page-content">
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container-fluid">
+        <div class="container">
             {{-- Logo Divisi Metabolik Endokrin RSCM --}}
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('assets/images/metabolik-endokrin.png') }}" height="54px"
@@ -74,6 +74,22 @@
                     <a class="nav-link text-dark" href="{{ url('/') }}">Beranda</a>
 
                     @auth
+                        {{-- Manager --}}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdownManager" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span class="text-dark">Manajer Koleksi</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
+                                 aria-labelledby="navbarDropdownManager">
+                                {{-- Poster --}}
+                                <a class="dropdown-item" href="{{ route('administrator.manager.poster') }}">
+                                    Poster
+                                </a>
+                            </div>
+                        </li>
+
                         {{-- Upload --}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownUpload" class="nav-link dropdown-toggle" href="#" role="button"
