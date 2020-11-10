@@ -99,6 +99,12 @@
 
                             <div class="dropdown-menu dropdown-menu-right animate__fadeInDown animate__animated"
                                  aria-labelledby="navbarDropdown">
+                                {{-- Change password --}}
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                   data-target="#modalChangePassword">
+                                    Ganti password
+                                </a>
+
                                 {{-- Logout --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -135,9 +141,23 @@
     </div>
 </footer>
 
+{{-- Message modal --}}
+@include('dialogs.message.dialog')
+
+{{-- Change password modal --}}
+@auth
+    @include('dialogs.change_password.dialog')
+@endauth
+
 {{-- Bootstrap script --}}
 <script src="{{ asset('jquery/jquery-3.5.1.slim.min.js') }}"></script>
 <script src="{{ asset('popper/popper.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+
+{{-- Message modal script --}}
+@include('dialogs.message.dialog_script')
+
+{{-- Additional scripts --}}
+@yield('script')
 </body>
 </html>
