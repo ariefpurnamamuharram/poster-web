@@ -19,6 +19,9 @@
     {{-- Bootsrap css --}}
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    {{-- Hover css --}}
+    <link href="{{ asset('hover/css/hover-min.css') }}" rel="stylesheet">
+
     {{-- Other styles --}}
     <style>
         @font-face {
