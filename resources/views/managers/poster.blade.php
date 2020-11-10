@@ -28,7 +28,13 @@
                     @foreach($posters as $poster)
                         <tr>
                             <td class="text-center text-nowrap">{{ $poster->id }}</td>
-                            <td style="min-width: 240px; max-width: 320px">{{ $poster->poster_title }}</td>
+                            <td style="min-width: 240px; max-width: 320px">
+                                <span>{{ $poster->poster_title }}</span>
+                                <br/>
+                                <span>[<a href="#" class="text-warning">Edit</a>]
+                                    [<a href="#" class="text-danger" data-toggle="modal" data-target="#modalDelete"
+                                        data-poster-id="{{ $poster->id }}">Hapus</a>]</span>
+                            </td>
                             <td style="min-width: 240px;">{{ $poster->poster_authors }}</td>
                             <td class="text-center text-nowrap">
                                 @switch($poster->poster_category)
@@ -67,4 +73,12 @@
             {{ $posters->links() }}
         </div>
     </div>
+
+    {{-- Delete dialog --}}
+    @include('managers.dialog.delete.dialog')
+@endsection
+
+@section('script')
+    {{-- Delete dialog script --}}
+    @include('managers.dialog.delete.dialog_script')
 @endsection

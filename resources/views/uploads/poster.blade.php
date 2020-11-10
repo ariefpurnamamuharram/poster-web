@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="card shadow-sm">
-            <div class="card-header">Unggah Poster Baru</div>
+            <div class="card-header bg-transparent">Unggah Poster Baru</div>
 
             <div class="card-body">
                 <form method="post" action="{{ route('administrator.upload.poster.post') }}"
