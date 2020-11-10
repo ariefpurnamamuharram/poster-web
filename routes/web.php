@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +30,13 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::prefix('file')->group(function () {
     Route::get('poster/{posterID}', [DisplayController::class, 'showPoster'])->name('show.poster');
+});
+
+Route::prefix('vote')->group(function () {
+    Route::prefix('poster')->group(function () {
+        Route::post('like', [VoteController::class, 'like'])->name('poster.vote.like');
+        Route::post('dislike', [VoteController::class, 'dislike'])->name('poster.vote.dislike');
+    });
 });
 
 Route::prefix('user')->group(function () {

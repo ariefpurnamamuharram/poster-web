@@ -68,7 +68,41 @@
             </div>
 
             <div class="mt-3">
-                <span><span class="font-weight-bold">Keywords:</span> @if(!empty($poster->poster_keywords)) {{ $poster->poster_keywords }} @else - @endif</span>
+                <span><span
+                        class="font-weight-bold">Keywords:</span> @if(!empty($poster->poster_keywords)) {{ $poster->poster_keywords }} @else
+                        - @endif</span>
+            </div>
+
+            <div class="d-flex justify-content-end" style="margin-top: 32px;">
+                <div class="btn-group" role="group">
+                    {{-- Vote dislike --}}
+                    <form id="poster-vote-dislike-form" action="{{ route('poster.vote.dislike') }}" method="post"
+                          enctype="multipart/form-data">
+                        @csrf
+
+                        <input type="hidden" name="posterID" value="{{ $poster->id }}">
+                    </form>
+
+                    <a href="#" class="btn btn-danger hvr-icon-pulse-grow"
+                       onclick="document.getElementById('poster-vote-dislike-form').submit();">
+                        <span class="badge badge-light">{{ $poster->total_dislikes }}</span> <span>Dislike</span>
+                        <i class="fas fa-thumbs-down hvr-icon"></i>
+                    </a>
+
+                    {{-- Vote like --}}
+                    <form id="poster-vote-like-form" action="{{ route('poster.vote.like') }}" method="post"
+                          enctype="multipart/form-data">
+                        @csrf
+
+                        <input type="hidden" name="posterID" value="{{ $poster->id }}">
+                    </form>
+
+                    <a href="#" class="btn btn-success hvr-icon-pulse-grow"
+                       onclick="document.getElementById('poster-vote-like-form').submit();">
+                        <span class="badge badge-light">{{ $poster->total_likes }}</span> <span>Like</span>
+                        <i class="fas fa-thumbs-up hvr-icon"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </div>

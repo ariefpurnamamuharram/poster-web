@@ -193,7 +193,10 @@
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 
 {{-- Autosize script --}}
-<script src="{{ asset('autosize/autosize.js') }}"></script>
+<script src="{{ asset('autosize/autosize.min.js') }}"></script>
+
+{{-- Font awesome --}}
+<script src="https://kit.fontawesome.com/9cb6f587df.js" crossorigin="anonymous"></script>
 
 {{-- Message modal script --}}
 @include('dialogs.message.dialog_script')
