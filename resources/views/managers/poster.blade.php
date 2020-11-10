@@ -14,13 +14,13 @@
             <table class="table table-hover">
                 <thead>
                 <tr class="table-primary text-center">
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Authors</th>
-                    <th>Category</th>
-                    <th>Total Likes</th>
-                    <th>Total Dislikes</th>
-                    <th>Total Comments</th>
+                    <th class="text-nowrap">ID</th>
+                    <th class="text-nowrap">Title</th>
+                    <th class="text-nowrap">Authors</th>
+                    <th class="text-nowrap">Category</th>
+                    <th class="text-nowrap">Total Likes</th>
+                    <th class="text-nowrap">Total Dislikes</th>
+                    <th class="text-nowrap">Total Comments</th>
                 </tr>
                 </thead>
                 <tbody>
