@@ -23,5 +23,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\AdministratorController::class, 'index'])->name('home');
 Route::post('/change-password', [\App\Http\Controllers\UserController::class, 'changePassword'])->name('change.password');
