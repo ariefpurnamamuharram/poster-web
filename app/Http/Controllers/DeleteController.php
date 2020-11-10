@@ -28,6 +28,6 @@ class DeleteController extends Controller
 
         return redirect()
             ->back()
-            ->with('message', 'Poster berhasil dihapus!');
+            ->with('message', 'Poster deleted successfully!');
     }
 }

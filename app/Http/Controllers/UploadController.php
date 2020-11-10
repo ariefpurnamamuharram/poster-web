@@ -49,6 +49,6 @@ class UploadController extends Controller
 
         return redirect()
             ->back()
-            ->with('message', 'Poster berhasil diunggah!');
+            ->with('message', 'Poster uploaded successfully!');
     }
 }

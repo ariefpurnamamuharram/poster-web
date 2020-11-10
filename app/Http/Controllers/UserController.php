@@ -29,11 +29,11 @@ class UserController extends Controller
 
             return redirect()
                 ->back()
-                ->with('message', 'Password berhasil diubah!');
+                ->with('message', 'Password changes successfully!');
         } else {
             return redirect()
                 ->back()
-                ->with('message', 'Password yang Anda masukkan salah!');
+                ->with('message', 'Password wrong!');
         }
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h3>Manajer Koleksi Poster</h3>
+        <h3>Poster Collections Manager</h3>
 
         <hr/>
 
@@ -15,12 +15,12 @@
                 <thead>
                 <tr class="table-primary text-center">
                     <th>ID</th>
-                    <th>Judul</th>
-                    <th>Pengarang</th>
-                    <th>Kategori</th>
-                    <th>Total Disukai</th>
-                    <th>Total Tidak Disukai</th>
-                    <th>Total Komentar</th>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Category</th>
+                    <th>Total Likes</th>
+                    <th>Total Dislikes</th>
+                    <th>Total Comments</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                                 <br/>
                                 <span>[<a href="#" class="text-warning">Edit</a>]
                                     [<a href="#" class="text-danger" data-toggle="modal" data-target="#modalDelete"
-                                        data-poster-id="{{ $poster->id }}">Hapus</a>]</span>
+                                        data-poster-id="{{ $poster->id }}">Delete</a>]</span>
                             </td>
                             <td style="min-width: 240px;">{{ $poster->poster_authors }}</td>
                             <td class="text-center text-nowrap">

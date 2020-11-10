@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalChangePasswordTitle">
-                    Ganti password
+                    Change password
                 </h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
@@ -21,14 +21,14 @@
                     <div class="form-group row">
                         <div class="col-md-5">
                             <label for="oldPassword" class="col-form-label">
-                                Password lama<span class="text-danger">*</span>
+                                Old password<span class="text-danger">*</span>
                             </label>
                         </div>
 
                         <div class="col-md-7">
                             <input id="oldPassword" name="oldPassword" type="password"
                                    class="form-control @error('oldPassword') is-invalid @enderror"
-                                   placeholder="Password lama Anda" required>
+                                   placeholder="Your old password" required>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('oldPassword') }}
@@ -40,14 +40,14 @@
                     <div class="form-group row">
                         <div class="col-md-5">
                             <label for="newPassword" class="col-form-label">
-                                Password baru<span class="text-danger">*</span>
+                                New password<span class="text-danger">*</span>
                             </label>
                         </div>
 
                         <div class="col-md-7">
                             <input id="newPassword" name="newPassword" type="password"
                                    class="form-control @error('newPassword') is-invalid @enderror"
-                                   placeholder="Password baru Anda" required>
+                                   placeholder="Your new password" required>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('newPassword') }}
@@ -59,14 +59,14 @@
                     <div class="form-group row">
                         <div class="col-md-5">
                             <label for="newPassword_confirmation" class="col-form-label">
-                                Konfirmasi password<span class="text-danger">*</span>
+                                Password confirmation<span class="text-danger">*</span>
                             </label>
                         </div>
 
                         <div class="col-md-7">
                             <input id="newPassword_confirmation" name="newPassword_confirmation" type="password"
                                    class="form-control @error('newPassword') is-invalid @enderror"
-                                   placeholder="Konfirmasi password baru Anda" required>
+                                   placeholder="Confirmed your new password" required>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('newPassword') }}
@@ -78,11 +78,11 @@
 
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal">
-                    Tutup
+                    Close
                 </button>
 
                 <button class="btn btn-warning" onclick="document.getElementById('change-password-form').submit();">
-                    Simpan
+                    Save
                 </button>
             </div>
         </div>

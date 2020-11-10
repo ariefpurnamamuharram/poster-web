@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalDeleteTitle">
-                    Hapus Poster
+                    Delete Poster
                 </h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
@@ -19,15 +19,15 @@
 
                     <input type="hidden" id="posterID" name="posterID">
 
-                    <p>Apakah Anda yakin untuk menghapus poster ini?</p>
+                    <p>Are you sure want to delete this poster?</p>
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                 <button class="btn btn-danger" onclick="document.getElementById('delete-poster-form').submit()">
-                    Hapus
+                    Delete
                 </button>
             </div>
         </div>
