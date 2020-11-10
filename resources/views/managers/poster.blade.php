@@ -29,7 +29,8 @@
                         <tr>
                             <td class="text-center text-nowrap">{{ $poster->id }}</td>
                             <td style="min-width: 240px; max-width: 320px">
-                                <span>{{ $poster->poster_title }}</span>
+                                <a class="text-decoration-none text-dark"
+                                   href="{{ route('show.poster', $poster->id) }}">{{ $poster->poster_title }}</a>
                                 <br/>
                                 <span>[<a href="#" class="text-warning">Edit</a>]
                                     [<a href="#" class="text-danger" data-toggle="modal" data-target="#modalDelete"
