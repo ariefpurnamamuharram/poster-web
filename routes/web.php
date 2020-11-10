@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,9 +21,12 @@ Auth::routes([
     'reset' => false,
 ]);
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+
+Route::prefix('user')->group(function () {
+    Route::post('change-password', [UserController::class, 'changePassword'])->name('user.change.password');
 });
 
-Route::get('/home', [App\Http\Controllers\AdministratorController::class, 'index'])->name('home');
-Route::post('/change-password', [\App\Http\Controllers\UserController::class, 'changePassword'])->name('change.password');
+Route::prefix('administrator')->group(function () {
+    Route::get('home', [App\Http\Controllers\AdministratorController::class, 'index'])->name('administrator.home');
+});

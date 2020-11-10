@@ -70,7 +70,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 {{-- Left side of navbar --}}
                 <ul class="navbar-nav mr-auto">
+                    {{-- Home --}}
+                    <a class="nav-link text-dark" href="{{ url('/') }}">Beranda</a>
 
+                    @auth
+                        {{-- Upload --}}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdownUpload" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span class="text-dark">Unggah</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
+                                 aria-labelledby="navbarDropdownUpload">
+                                {{-- Poster --}}
+                                <a class="dropdown-item" href="#">
+                                    Poster
+                                </a>
+                            </div>
+                        </li>
+                    @endauth
                 </ul>
 
                 {{-- Right side of navbar --}}
@@ -80,14 +99,14 @@
                         @if (Route::has('login'))
                             {{-- Login --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Masuk</a>
+                                <a class="nav-link text-dark" href="{{ route('login') }}">Masuk</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             {{-- Register --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Daftar</a>
+                                <a class="nav-link text-dark" href="{{ route('register') }}">Daftar</a>
                             </li>
                         @endif
                     @else
