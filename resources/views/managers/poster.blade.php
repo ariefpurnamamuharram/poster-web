@@ -24,34 +24,40 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($posters as $poster)
+                @if(count($posters) != 0)
+                    @foreach($posters as $poster)
+                        <tr>
+                            <td class="text-center text-nowrap">{{ $poster->id }}</td>
+                            <td style="min-width: 240px; max-width: 320px">{{ $poster->poster_title }}</td>
+                            <td style="min-width: 240px;">{{ $poster->poster_authors }}</td>
+                            <td class="text-center text-nowrap">
+                                @switch($poster->poster_category)
+                                    @case(1)
+                                    <span>Diabetes melitus</span>
+                                    @break
+                                    @case(2)
+                                    <span>Diabetic foot</span>
+                                    @break
+                                    @case(3)
+                                    <span>Metabolic syndrome</span>
+                                    @break
+                                    @case(4)
+                                    <span>Dyslipidemia</span>
+                                    @break
+                                    @case(5)
+                                    <span>Obesity</span>
+                                @endswitch
+                            </td>
+                            <td class="text-center text-nowrap">{{ $poster->total_likes }}</td>
+                            <td class="text-center text-nowrap">{{ $poster->total_dislikes }}</td>
+                            <td class="text-center text-nowrap">{{ $poster->total_comments }}</td>
+                        </tr>
+                    @endforeach
+                @else
                     <tr>
-                        <td class="text-center text-nowrap">{{ $poster->id }}</td>
-                        <td style="min-width: 240px; max-width: 320px">{{ $poster->poster_title }}</td>
-                        <td style="min-width: 240px;">{{ $poster->poster_authors }}</td>
-                        <td class="text-center text-nowrap">
-                            @switch($poster->poster_category)
-                                @case(1)
-                                <span>Diabetes melitus</span>
-                                @break
-                                @case(2)
-                                <span>Diabetic foot</span>
-                                @break
-                                @case(3)
-                                <span>Metabolic syndrome</span>
-                                @break
-                                @case(4)
-                                <span>Dyslipidemia</span>
-                                @break
-                                @case(5)
-                                <span>Obesity</span>
-                            @endswitch
-                        </td>
-                        <td class="text-center text-nowrap">{{ $poster->total_likes }}</td>
-                        <td class="text-center text-nowrap">{{ $poster->total_dislikes }}</td>
-                        <td class="text-center text-nowrap">{{ $poster->total_comments }}</td>
+                        <td class="text-center" colspan="7">Belum ada data</td>
                     </tr>
-                @endforeach
+                @endif
                 </tbody>
             </table>
         </div>

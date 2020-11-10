@@ -21,7 +21,7 @@
                         <div class="col-md-10">
                             <input type="text" id="title" name="title"
                                    class="form-control @error('title') is-invalid @enderror"
-                                   placeholder="Judul penelitian" required>
+                                   placeholder="Judul penelitian" value="{{ old('title') }}" required>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('title') }}
@@ -40,7 +40,7 @@
                         <div class="col-md-10">
                             <input id="authors" name="authors" type="text"
                                    class="form-control @error('authors') is-invalid @enderror"
-                                   placeholder="Nama pengarang" required>
+                                   placeholder="Nama pengarang" value="{{ old('authors') }}" required>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('authors') }}
@@ -59,7 +59,8 @@
                         <div class="col-md-10">
                             <textarea id="affiliations" name="affiliations"
                                       class="form-control @error('affiliations') is-invalid @enderror"
-                                      placeholder="Afiliasi pengarang" rows="2" required></textarea>
+                                      placeholder="Afiliasi pengarang" rows="2"
+                                      required>{{ old('affiliations') }}</textarea>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('affiliations') }}
@@ -79,11 +80,11 @@
                             <select id="category" name="category"
                                     class="form-control @error('category') is-invalid @enderror" required>
                                 <option selected disabled>-- Pilih kategori poster --</option>
-                                <option value="1">Diabetes mellitus</option>
-                                <option value="2">Diabetic foot</option>
-                                <option value="3">Metabolic syndrome</option>
-                                <option value="4">Dyslipidemia</option>
-                                <option value="5">Obesity</option>
+                                <option value="1" @if(old('category') == 1) selected @endif>Diabetes mellitus</option>
+                                <option value="2" @if(old('category') == 2) selected @endif>Diabetic foot</option>
+                                <option value="3" @if(old('category') == 3) selected @endif>Metabolic syndrome</option>
+                                <option value="4" @if(old('category') == 4) selected @endif>Dyslipidemia</option>
+                                <option value="5" @if(old('category') == 5) selected @endif>Obesity</option>
                             </select>
                         </div>
                     </div>
@@ -115,7 +116,7 @@
                         <div class="col-md-10">
                             <textarea id="abstract" name="abstract"
                                       class="form-control @error('abstract') is-invalid @enderror"
-                                      placeholder="Abstrak" rows="6"></textarea>
+                                      placeholder="Abstrak" rows="6">{{ old('abstract') }}</textarea>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('abstract') }}
@@ -133,8 +134,8 @@
 
                         <div class="col-md-10">
                             <input type="text" id="keywords" name="keywords"
-                                   class="form-control @error('keywords') is-invalid @enderror" placeholder="Kata kunci"
-                                   required>
+                                   class="form-control @error('keywords') is-invalid @enderror"
+                                   placeholder="Kata kunci" value="{{ old('keywords') }}">
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('keywords') }}

@@ -92,7 +92,7 @@
                     </div>
                 </section>
             @else
-                <p>Belum ada poster diunggah.</p>
+                <p class="pt-2">Belum ada poster diunggah.</p>
             @endif
         </section>
     </div>

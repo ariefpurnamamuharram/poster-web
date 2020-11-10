@@ -28,7 +28,7 @@ class UploadController extends Controller
             'category' => 'required|numeric',
             'poster' => 'required|image|max:6000',
             'abstract' => 'nullable|min:54|max:2048',
-            'keywords' => 'required|min:8|max:180',
+            'keywords' => 'nullable|min:8|max:180',
         ]);
 
         $uploadedPoster = $request->file('poster');
