@@ -6,9 +6,12 @@
             <div class="card-header bg-transparent">Edit Poster</div>
 
             <div class="card-body">
-                <form method="post" action="#"
+                <form method="post" action="{{ route('administrator.manager.poster.update') }}"
                       enctype="multipart/form-data">
                     @csrf
+
+                    {{-- Poster ID --}}
+                    <input type="hidden" name="posterID" value="{{ $poster->id }}">
 
                     {{-- Title --}}
                     <div class="form-group row">
@@ -80,10 +83,15 @@
                             <select id="category" name="category"
                                     class="form-control @error('category') is-invalid @enderror" required>
                                 <option selected disabled>-- Choose poster category --</option>
-                                <option value="1" @if($poster->poster_category == 1) selected @endif>Diabetes mellitus</option>
-                                <option value="2" @if($poster->poster_category == 2) selected @endif>Diabetic foot</option>
-                                <option value="3" @if($poster->poster_category == 3) selected @endif>Metabolic syndrome</option>
-                                <option value="4" @if($poster->poster_category == 4) selected @endif>Dyslipidemia</option>
+                                <option value="1" @if($poster->poster_category == 1) selected @endif>Diabetes mellitus
+                                </option>
+                                <option value="2" @if($poster->poster_category == 2) selected @endif>Diabetic foot
+                                </option>
+                                <option value="3" @if($poster->poster_category == 3) selected @endif>Metabolic
+                                    syndrome
+                                </option>
+                                <option value="4" @if($poster->poster_category == 4) selected @endif>Dyslipidemia
+                                </option>
                                 <option value="5" @if($poster->poster_category == 5) selected @endif>Obesity</option>
                             </select>
                         </div>
@@ -127,15 +135,16 @@
                         </div>
                     </div>
 
-                    <br />
+                    <br/>
 
                     <h5 class="text-warning">Change Poster File</h5>
 
-                    <hr />
+                    <hr/>
 
                     {{-- Current poster --}}
                     <div class="form-group">
-                        <img src="{{ Storage::url($poster->poster_filename) }}" class="img-fluid" alt="Poster {{ $poster->poster_title }}">
+                        <img src="{{ Storage::url($poster->poster_filename) }}" class="img-fluid"
+                             alt="Poster {{ $poster->poster_title }}">
                         <p class="text-center mt-2">(Current poster)</p>
                     </div>
 
@@ -158,7 +167,7 @@
                     {{-- Submit button --}}
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-warning">
-                            Upload
+                            Update
                         </button>
                     </div>
                 </form>

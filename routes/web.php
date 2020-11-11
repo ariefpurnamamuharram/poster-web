@@ -49,8 +49,9 @@ Route::prefix('administrator')->group(function () {
 
     Route::prefix('manager')->group(function () {
         Route::prefix('poster')->group(function () {
-            Route::get('/', [ManagerController::class, 'poster'])->name('administrator.manager.posters');
+            Route::get('all', [ManagerController::class, 'poster'])->name('administrator.manager.posters');
             Route::get('edit/{posterID}', [EditController::class, 'editPoster'])->name('administrator.manager.poster.edit');
+            Route::post('update', [EditController::class, 'updatePoster'])->name('administrator.manager.poster.update');
             Route::post('delete', [DeleteController::class, 'deletePoster'])->name('administrator.manager.poster.delete');
         });
     });
