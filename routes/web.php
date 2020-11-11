@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\DisplayController;
+use App\Http\Controllers\EditController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\UploadController;
@@ -48,7 +49,8 @@ Route::prefix('administrator')->group(function () {
 
     Route::prefix('manager')->group(function () {
         Route::prefix('poster')->group(function () {
-            Route::get('/', [ManagerController::class, 'poster'])->name('administrator.manager.poster');
+            Route::get('/', [ManagerController::class, 'poster'])->name('administrator.manager.posters');
+            Route::get('edit/{posterID}', [EditController::class, 'editPoster'])->name('administrator.manager.poster.edit');
             Route::post('delete', [DeleteController::class, 'deletePoster'])->name('administrator.manager.poster.delete');
         });
     });

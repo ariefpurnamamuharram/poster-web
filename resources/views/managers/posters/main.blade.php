@@ -32,7 +32,7 @@
                                 <a class="text-decoration-none text-dark"
                                    href="{{ route('show.poster', $poster->id) }}">{{ $poster->poster_title }}</a>
                                 <br/>
-                                <span>[<a href="#" class="text-warning">Edit</a>]
+                                <span>[<a href="{{ route('administrator.manager.poster.edit', $poster->id) }}" class="text-warning">Edit</a>]
                                     [<a href="#" class="text-danger" data-toggle="modal" data-target="#modalDelete"
                                         data-poster-id="{{ $poster->id }}">Delete</a>]</span>
                             </td>

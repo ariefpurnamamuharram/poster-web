@@ -87,7 +87,7 @@
                             <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
                                  aria-labelledby="navbarDropdownManager">
                                 {{-- Poster --}}
-                                <a class="dropdown-item" href="{{ route('administrator.manager.poster') }}">
+                                <a class="dropdown-item" href="{{ route('administrator.manager.posters') }}">
                                     Poster
                                 </a>
                             </div>
