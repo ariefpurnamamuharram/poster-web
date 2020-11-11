@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poster;
+use App\Models\PosterComment;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,10 +21,21 @@ class DeleteController extends Controller
             'posterID' => 'required',
         ]);
 
+        // Get poster file.
         $poster = Poster::where('id', $request->posterID)->first();
 
+        // Delete poster file.
         Storage::delete($poster->poster_filename);
 
+        // Delete poster comments.
+        $posterComments = PosterComment::where('poster_id', $poster->id)->get();
+        if (count($posterComments) != 0) {
+            foreach ($posterComments as $posterComment) {
+                $posterComment->delete();
+            }
+        }
+
+        // Delete poster record.
         $poster->delete();
 
         return redirect()
