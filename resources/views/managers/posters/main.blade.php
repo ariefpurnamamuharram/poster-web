@@ -76,10 +76,10 @@
     </div>
 
     {{-- Delete dialog --}}
-    @include('managers.dialog.delete.dialog')
+    @include('managers.posters.dialog.delete.dialog')
 @endsection
 
 @section('script')
     {{-- Delete dialog script --}}
-    @include('managers.dialog.delete.dialog_script')
+    @include('managers.posters.dialog.delete.dialog_script')
 @endsection

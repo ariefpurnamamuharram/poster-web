@@ -18,7 +18,7 @@ class ManagerController extends Controller
             ->orderBy('total_comments', 'DESC')
             ->paginate(16);
 
-        return view('managers.poster', [
+        return view('managers.posters.main', [
             'posters' => $posters,
         ]);
     }
