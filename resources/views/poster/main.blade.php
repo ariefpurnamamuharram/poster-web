@@ -105,6 +105,73 @@
                 </div>
             </div>
         </section>
+
+        <br/>
+
+        <hr/>
+
+        {{-- Comments --}}
+        <section style="margin-top: 32px;">
+            <h4>Leave a Comment</h4>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        @csrf
+
+                        {{-- Name --}}
+                        <div class="form-group row">
+                            <div class="col-md-8">
+                                <label for="name">Name<span class="text-danger">*</span></label>
+
+                                <input type="text" id="name" name="name"
+                                       class="form-control @error('name') is-invalid @enderror"
+                                       placeholder="Your name" value="{{ old('name') }}" required>
+
+                                <span class="invalid-feedback" role="alert">
+                                    {{ $errors->first('name') }}
+                                </span>
+                            </div>
+                        </div>
+
+                        {{-- Email --}}
+                        <div class="form-group row">
+                            <div class="col-md-8">
+                                <label for="email">Email<span class="text-danger">*</span></label>
+
+                                <input type="text" id="email" name="email"
+                                       class="form-control @error('email') is-invalid @enderror"
+                                       placeholder="Your email" value="{{ old('email') }}" required>
+
+                                <span class="invalid-feedback" role="alert">
+                                    {{ $errors->first('email') }}
+                                </span>
+                            </div>
+                        </div>
+
+                        {{-- Comment --}}
+                        <div class="form-group">
+                            <label for="comment">Comment<span class="text-danger">*</span></label>
+
+                            <textarea id="comment" name="comment"
+                                      class="form-control @error('comment') is-invalid @enderror" placeholder="Comments"
+                                      required>{{ old('comment') }}</textarea>
+
+                            <span class="invalid-feedback" role="alert">
+                                {{ $errors->first('comment') }}
+                            </span>
+                        </div>
+
+                        {{-- Post comment button --}}
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </div>
 @endsection
 
