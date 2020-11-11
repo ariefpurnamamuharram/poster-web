@@ -157,7 +157,7 @@
 
                             <textarea id="comment" name="comment"
                                       class="form-control @error('comment') is-invalid @enderror" placeholder="Comments"
-                                      required>{{ old('comment') }}</textarea>
+                                      rows="5" required>{{ old('comment') }}</textarea>
 
                             <span class="invalid-feedback" role="alert">
                                 {{ $errors->first('comment') }}
