@@ -76,7 +76,7 @@
             <div class="d-flex justify-content-end" style="margin-top: 32px;">
                 <div class="btn-group" role="group">
                     {{-- Vote dislike --}}
-                    <form id="poster-vote-dislike-form" action="{{ route('poster.vote.dislike') }}" method="post"
+                    <form id="poster-vote-dislike-form" action="{{ route('vote.poster.dislike') }}" method="post"
                           enctype="multipart/form-data">
                         @csrf
 
@@ -90,7 +90,7 @@
                     </a>
 
                     {{-- Vote like --}}
-                    <form id="poster-vote-like-form" action="{{ route('poster.vote.like') }}" method="post"
+                    <form id="poster-vote-like-form" action="{{ route('vote.poster.like') }}" method="post"
                           enctype="multipart/form-data">
                         @csrf
 
@@ -110,7 +110,44 @@
 
         <hr/>
 
-        {{-- Comments --}}
+        {{-- Comment --}}
+        @if(count($comments) != 0)
+            <h4>{{ count($comments) }} Responses</h4>
+
+            <br/>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <tbody>
+                    @foreach($comments as $comment)
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img src="{{ asset('assets/images/avatar.png') }}" height="54px" alt="Avatar">
+                                    </div>
+
+                                    <div class="col-md-11">
+                                        <span><span
+                                                class="font-weight-bold">{{ $comment->name }}</span> says:</span><br/>
+                                        <span class="text-secondary">{{ date('F j, Y', strtotime($comment->created_at)) }} at {{ date('H:i', strtotime($comment->created_at)) }}</span>
+                                    </div>
+                                </div>
+
+                                <br/>
+
+                                <div>
+                                    {{ $comment->comment }}
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @endif
+
+        {{-- Leave a comment --}}
         <section style="margin-top: 32px;">
             <h4>Leave a Comment</h4>
 
@@ -118,8 +155,11 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('comment.poster') }}" method="post" enctype="multipart/form-data">
                         @csrf
+
+                        {{-- Poster ID --}}
+                        <input type="hidden" name="posterID" value="{{ $poster->id }}">
 
                         {{-- Name --}}
                         <div class="form-group row">

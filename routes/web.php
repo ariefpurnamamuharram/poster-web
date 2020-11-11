@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\EditController;
@@ -35,9 +36,13 @@ Route::prefix('file')->group(function () {
 
 Route::prefix('vote')->group(function () {
     Route::prefix('poster')->group(function () {
-        Route::post('like', [VoteController::class, 'like'])->name('poster.vote.like');
-        Route::post('dislike', [VoteController::class, 'dislike'])->name('poster.vote.dislike');
+        Route::post('like', [VoteController::class, 'like'])->name('vote.poster.like');
+        Route::post('dislike', [VoteController::class, 'dislike'])->name('vote.poster.dislike');
     });
+});
+
+Route::prefix('comment')->group(function () {
+    Route::post('poster', [CommentController::class, 'commentPoster'])->name('comment.poster');
 });
 
 Route::prefix('user')->group(function () {
