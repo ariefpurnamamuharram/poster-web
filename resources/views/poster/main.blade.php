@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         {{-- Poster title --}}
-        <h3>{{ $poster->poster_title }}</h3>
+        <h4>{{ $poster->poster_title }}</h4>
 
         {{-- Post information --}}
         <span class="text-secondary">Posted {{ date('F j, Y', strtotime($poster->created_at)) }}
