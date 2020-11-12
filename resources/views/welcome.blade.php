@@ -3,45 +3,76 @@
 @section('content')
     <div class="container">
         <div class="card">
+            {{-- Carousel card, show only in small screen --}}
+            <div class="d-block d-sm-none">
+                <div id="carouselHomeIndicators" class="carousel slide" data-ride="carousel">
+                    {{-- Carousel indicators --}}
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselHomeIndicators" data-slide-to="0" class="active"></li>
+                    </ol>
+
+                    {{-- Carousel contents --}}
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ asset('assets/images/banner-jdm-2020.png') }}"
+                                 alt="Jakarta Diabetes Meeting 2020">
+                        </div>
+                    </div>
+
+                    {{-- Carousel controllers --}}
+                    <a class="carousel-control-prev" href="#carouselHomeIndicators" role="button"
+                       data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselHomeIndicators" role="button"
+                       data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <hr/>
+            </div>
+
             <div class="card-body">
                 <div class="container">
                     {{-- Carousel card --}}
-                    <div class="card">
-                        {{-- Carousel --}}
-                        <div id="carouselHomeIndicators" class="carousel slide" data-ride="carousel">
-                            {{-- Carousel indicators --}}
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselHomeIndicators" data-slide-to="0" class="active"></li>
-                            </ol>
+                    <div class="d-none d-sm-block">
+                        <div class="card">
+                            {{-- Carousel --}}
+                            <div id="carouselHomeIndicators" class="carousel slide" data-ride="carousel">
+                                {{-- Carousel indicators --}}
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselHomeIndicators" data-slide-to="0" class="active"></li>
+                                </ol>
 
-                            {{-- Carousel contents --}}
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="{{ asset('assets/images/banner-jdm-2020.png') }}"
-                                         alt="Jakarta Diabetes Meeting 2020">
+                                {{-- Carousel contents --}}
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100"
+                                             src="{{ asset('assets/images/banner-jdm-2020.png') }}"
+                                             alt="Jakarta Diabetes Meeting 2020">
+                                    </div>
                                 </div>
-                            </div>
 
-                            {{-- Carousel controllers --}}
-                            <a class="carousel-control-prev" href="#carouselHomeIndicators" role="button"
-                               data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselHomeIndicators" role="button"
-                               data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                                {{-- Carousel controllers --}}
+                                <a class="carousel-control-prev" href="#carouselHomeIndicators" role="button"
+                                   data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselHomeIndicators" role="button"
+                                   data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     {{-- Poster section --}}
-                    <section style="margin-top: 32px;">
-                        <h2 class="text-center">ePoster Section</h2>
-
-                        <hr/>
-
+                    <section style="margin-top: 0;">
                         {{-- Posters --}}
                         <section>
                             @if(count($posters) != 0)
