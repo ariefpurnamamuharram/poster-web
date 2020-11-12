@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Auth routes.
 Auth::routes([
     'register' => false,
     'reset' => false,
@@ -31,29 +32,37 @@ Auth::routes([
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
+// File routes
 Route::prefix('file')->group(function () {
-    Route::get('poster/{posterID}', [DisplayController::class, 'showPoster'])->name('show.poster');
-});
-
-Route::prefix('vote')->group(function () {
     Route::prefix('poster')->group(function () {
-        Route::post('like', [VoteController::class, 'like'])->name('vote.poster.like');
-        Route::post('dislike', [VoteController::class, 'dislike'])->name('vote.poster.dislike');
+        // Show poster route.
+        Route::get('{posterID}', [DisplayController::class, 'showPoster'])->name('poster.show');
+
+        // Comment route.
+        Route::post('comment', [CommentController::class, 'commentPoster'])->name('poster.comment');
+
+        // Vote routes.
+        Route::prefix('vote')->group(function () {
+            Route::post('like', [VoteController::class, 'like'])->name('poster.vote.like');
+            Route::post('dislike', [VoteController::class, 'dislike'])->name('poster.vote.dislike');
+        });
     });
 });
 
-Route::prefix('comment')->group(function () {
-    Route::post('poster', [CommentController::class, 'commentPoster'])->name('comment.poster');
-});
-
+// User routes.
 Route::prefix('user')->group(function () {
-    Route::post('change-password', [UserController::class, 'changePassword'])->name('user.change.password');
+    // Update routes.
+    Route::prefix('update')->group(function () {
+        Route::post('profile', [UserController::class, 'changeProfile'])->name('user.update.profile');
+        Route::post('password', [UserController::class, 'changePassword'])->name('user.update.password');
+    });
 });
 
+// Administrator routes.
 Route::prefix('administrator')->group(function () {
-    Route::get('home', [App\Http\Controllers\AdministratorController::class, 'index'])->name('administrator.home');
-
+    // Manager routes.
     Route::prefix('manager')->group(function () {
+        // Poster manager routes.
         Route::prefix('poster')->group(function () {
             Route::get('all', [ManagerController::class, 'poster'])->name('administrator.manager.posters');
             Route::get('edit/{posterID}', [EditController::class, 'editPoster'])->name('administrator.manager.poster.edit');
@@ -62,15 +71,18 @@ Route::prefix('administrator')->group(function () {
         });
     });
 
+    // Upload routes.
     Route::prefix('upload')->group(function () {
+        // Poster upload routes.
         Route::prefix('poster')->group(function () {
             Route::get('/', [UploadController::class, 'poster'])->name('administrator.upload.poster');
             Route::post('post', [UploadController::class, 'uploadPoster'])->name('administrator.upload.poster.post');
         });
     });
 
+    // Settings routes.
     Route::prefix('settings')->group(function () {
         Route::get('/', [SettingsController::class, 'settingsPage'])->name('administrator.settings.page');
-        Route::post('post', [SettingsController::class, 'updateSettings'])->name('administrator.settings.update');
+        Route::post('update', [SettingsController::class, 'updateSettings'])->name('administrator.settings.update');
     });
 });

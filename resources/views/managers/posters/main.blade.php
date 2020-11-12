@@ -30,7 +30,7 @@
                             <td class="text-center text-nowrap">{{ $poster->id }}</td>
                             <td style="min-width: 240px; max-width: 320px">
                                 <a class="text-decoration-none text-dark"
-                                   href="{{ route('show.poster', $poster->id) }}">{{ $poster->poster_title }}</a>
+                                   href="{{ route('poster.show', $poster->id) }}">{{ $poster->poster_title }}</a>
                                 <br/>
                                 <span>[<a href="{{ route('administrator.manager.poster.edit', $poster->id) }}" class="text-warning">Edit</a>]
                                     [<a href="#" class="text-danger" data-toggle="modal" data-target="#modalDelete"

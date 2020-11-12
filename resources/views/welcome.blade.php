@@ -59,7 +59,7 @@
                                         <img class="card-img-top" src="{{ Storage::url($poster->poster_filename) }}"
                                              alt="Poster {{ $poster->poster_title }}"/>
                                         <div class="card-body">
-                                            <a href="{{ route('show.poster', $poster->id) }}"
+                                            <a href="{{ route('poster.show', $poster->id) }}"
                                                class="text-decoration-none text-dark">
                                                 <h6 class="card-title">{{ $poster->poster_title }}</h6>
                                             </a>

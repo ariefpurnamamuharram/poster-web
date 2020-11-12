@@ -76,7 +76,7 @@
             <div class="d-flex justify-content-end" style="margin-top: 32px;">
                 <div class="btn-group" role="group">
                     {{-- Vote dislike --}}
-                    <form id="poster-vote-dislike-form" action="{{ route('vote.poster.dislike') }}" method="post"
+                    <form id="poster-vote-dislike-form" action="{{ route('poster.vote.dislike') }}" method="post"
                           enctype="multipart/form-data">
                         @csrf
 
@@ -90,7 +90,7 @@
                     </a>
 
                     {{-- Vote like --}}
-                    <form id="poster-vote-like-form" action="{{ route('vote.poster.like') }}" method="post"
+                    <form id="poster-vote-like-form" action="{{ route('poster.vote.like') }}" method="post"
                           enctype="multipart/form-data">
                         @csrf
 
@@ -155,7 +155,7 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <form action="{{ route('comment.poster') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('poster.comment') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         {{-- Poster ID --}}

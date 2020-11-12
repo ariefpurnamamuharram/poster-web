@@ -142,6 +142,11 @@
 
                             <div class="dropdown-menu dropdown-menu-right animate__fadeInDown animate__animated"
                                  aria-labelledby="navbarDropdown">
+                                {{-- Change profile --}}
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalChangeProfile">
+                                    Change profile
+                                </a>
+
                                 {{-- Change password --}}
                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                    data-target="#modalChangePassword">
@@ -187,8 +192,11 @@
 {{-- Message modal --}}
 @include('dialogs.message.dialog')
 
-{{-- Change password modal --}}
 @auth
+    {{-- Change profile dialog --}}
+    @include('dialogs.change_profile.dialog')
+
+    {{-- Change password dialog --}}
     @include('dialogs.change_password.dialog')
 @endauth
 

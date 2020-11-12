@@ -13,7 +13,7 @@
             </div>
 
             <div class="modal-body">
-                <form id="change-password-form" action="{{ route('user.change.password') }}" method="post"
+                <form id="change-password-form" action="{{ route('user.update.password') }}" method="post"
                       enctype="multipart/form-data">
                     @csrf
 
