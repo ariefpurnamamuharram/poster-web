@@ -5,30 +5,35 @@
         <div class="card">
             <div class="card-body">
                 <div class="container">
-                    {{-- Carousel --}}
-                    <div id="carouselHomeIndicators" class="carousel slide" data-ride="carousel">
-                        {{-- Carousel indicators --}}
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselHomeIndicators" data-slide-to="0" class="active"></li>
-                        </ol>
+                    {{-- Carousel card --}}
+                    <div class="card">
+                        {{-- Carousel --}}
+                        <div id="carouselHomeIndicators" class="carousel slide" data-ride="carousel">
+                            {{-- Carousel indicators --}}
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselHomeIndicators" data-slide-to="0" class="active"></li>
+                            </ol>
 
-                        {{-- Carousel contents --}}
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('assets/images/banner-jdm-2020.png') }}"
-                                     alt="Jakarta Diabetes Meeting 2020">
+                            {{-- Carousel contents --}}
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="{{ asset('assets/images/banner-jdm-2020.png') }}"
+                                         alt="Jakarta Diabetes Meeting 2020">
+                                </div>
                             </div>
-                        </div>
 
-                        {{-- Carousel controllers --}}
-                        <a class="carousel-control-prev" href="#carouselHomeIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselHomeIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            {{-- Carousel controllers --}}
+                            <a class="carousel-control-prev" href="#carouselHomeIndicators" role="button"
+                               data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselHomeIndicators" role="button"
+                               data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
                     </div>
 
                     {{-- Poster section --}}
@@ -140,7 +145,8 @@
                                 <ul>
                                     @foreach($postersComments as $comment)
                                         <li>{{ $comment->name }} on <a
-                                                href="{{ route('poster.show', $comment->poster_id) }}" style="color: #0E6177;"
+                                                href="{{ route('poster.show', $comment->poster_id) }}"
+                                                style="color: #0E6177;"
                                                 class="text-decoration-none">{{ Poster::where('id', $comment->poster_id)->first()->poster_title }}</a>
                                         </li>
                                     @endforeach
