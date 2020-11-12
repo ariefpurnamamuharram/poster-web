@@ -128,7 +128,7 @@
                                     </div>
                                 </section>
                             @else
-                                <p class="pt-2">Belum ada poster diunggah.</p>
+                                <p class="pt-2">No data available.</p>
                             @endif
                         </section>
 

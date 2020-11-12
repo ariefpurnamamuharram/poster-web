@@ -62,7 +62,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td class="text-center" colspan="7">Belum ada data</td>
+                        <td class="text-center" colspan="7">No data available.</td>
                     </tr>
                 @endif
                 </tbody>
