@@ -11,6 +11,8 @@ class SiteSettings extends Model
 
     public const SETTING_SITE_TITLE = 'site_title';
 
+    public const SETTING_LOGIN_LINK = 'login_link';
+
     protected $table = 'site_settings';
 
     protected $fillable = [

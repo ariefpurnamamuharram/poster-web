@@ -6,6 +6,7 @@ use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoteController;
@@ -66,5 +67,10 @@ Route::prefix('administrator')->group(function () {
             Route::get('/', [UploadController::class, 'poster'])->name('administrator.upload.poster');
             Route::post('post', [UploadController::class, 'uploadPoster'])->name('administrator.upload.poster.post');
         });
+    });
+
+    Route::prefix('settings')->group(function () {
+        Route::get('/', [SettingsController::class, 'settingsPage'])->name('administrator.settings.page');
+        Route::post('post', [SettingsController::class, 'updateSettings'])->name('administrator.settings.update');
     });
 });

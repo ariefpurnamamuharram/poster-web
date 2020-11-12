@@ -108,6 +108,9 @@
                                 </a>
                             </div>
                         </li>
+
+                        {{-- Settings --}}
+                        <a class="nav-link text-dark" href="{{ route('administrator.settings.page') }}">Settings</a>
                     @endauth
                 </ul>
 
@@ -115,11 +118,13 @@
                 <ul class="navbar-nav ml-auto">
                     {{-- Authentication Links --}}
                     @guest
-                        @if (Route::has('login'))
-                            {{-- Login --}}
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ route('login') }}">Login</a>
-                            </li>
+                        {{-- Login --}}
+                        @if(SiteSettings::where('key', SiteSettings::SETTING_LOGIN_LINK)->first()->value == 1)
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="{{ route('login') }}">Login</a>
+                                </li>
+                            @endif
                         @endif
 
                         @if (Route::has('register'))
