@@ -72,6 +72,38 @@
                     {{-- Home --}}
                     <a class="nav-link text-dark" href="{{ url('/') }}">Home</a>
 
+                    @guest
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdownCategory" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span class="text-dark">Category</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
+                                 aria-labelledby="navbarDropdownCategory">
+                                <a class="dropdown-item" href="{{ route('category', 1) }}">
+                                    Diabetes Mellitus
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('category', 2) }}">
+                                    Diabetic Foot
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('category', 3) }}">
+                                    Metabolic Syndrome
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('category', 4) }}">
+                                    Dyslipidemia
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('category', 5) }}">
+                                    Obesity
+                                </a>
+                            </div>
+                        </li>
+                    @endguest
+
                     @auth
                         {{-- Manager --}}
                         <li class="nav-item dropdown">

@@ -79,7 +79,8 @@
                         <div class="d-flex justify-content-end" style="margin-top: 32px;">
                             <div class="btn-group" role="group">
                                 {{-- Vote dislike --}}
-                                <form id="poster-vote-dislike-form" action="{{ route('poster.vote.dislike') }}" method="post"
+                                <form id="poster-vote-dislike-form" action="{{ route('poster.vote.dislike') }}"
+                                      method="post"
                                       enctype="multipart/form-data">
                                     @csrf
 
@@ -88,7 +89,8 @@
 
                                 <a href="#" class="btn btn-danger hvr-icon-pulse-grow"
                                    onclick="document.getElementById('poster-vote-dislike-form').submit();">
-                                    <span class="badge badge-light">{{ $poster->total_dislikes }}</span> <span>Dislike</span>
+                                    <span class="badge badge-light">{{ $poster->total_dislikes }}</span>
+                                    <span>Dislike</span>
                                     <i class="fas fa-thumbs-down hvr-icon"></i>
                                 </a>
 
@@ -127,7 +129,8 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-1">
-                                                    <img src="{{ asset('assets/images/avatar.png') }}" height="54px" alt="Avatar">
+                                                    <img src="{{ asset('assets/images/avatar.png') }}" height="54px"
+                                                         alt="Avatar">
                                                 </div>
 
                                                 <div class="col-md-11">
@@ -158,7 +161,8 @@
 
                         <div class="row">
                             <div class="col-md-8">
-                                <form action="{{ route('poster.comment') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('poster.comment') }}" method="post"
+                                      enctype="multipart/form-data">
                                     @csrf
 
                                     {{-- Poster ID --}}
@@ -174,8 +178,8 @@
                                                    placeholder="Your name" value="{{ old('name') }}" required>
 
                                             <span class="invalid-feedback" role="alert">
-                                    {{ $errors->first('name') }}
-                                </span>
+                                                {{ $errors->first('name') }}
+                                            </span>
                                         </div>
                                     </div>
 
@@ -189,8 +193,8 @@
                                                    placeholder="Your email" value="{{ old('email') }}" required>
 
                                             <span class="invalid-feedback" role="alert">
-                                    {{ $errors->first('email') }}
-                                </span>
+                                                {{ $errors->first('email') }}
+                                            </span>
                                         </div>
                                     </div>
 
@@ -199,12 +203,13 @@
                                         <label for="comment">Comment<span class="text-danger">*</span></label>
 
                                         <textarea id="comment" name="comment"
-                                                  class="form-control @error('comment') is-invalid @enderror" placeholder="Comments"
+                                                  class="form-control @error('comment') is-invalid @enderror"
+                                                  placeholder="Comments"
                                                   rows="5" required>{{ old('comment') }}</textarea>
 
                                         <span class="invalid-feedback" role="alert">
-                                {{ $errors->first('comment') }}
-                            </span>
+                                            {{ $errors->first('comment') }}
+                                        </span>
                                     </div>
 
                                     {{-- Post comment button --}}

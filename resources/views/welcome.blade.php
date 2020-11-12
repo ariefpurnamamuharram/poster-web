@@ -164,7 +164,7 @@
                                     </div>
                                 </section>
                             @else
-                                <p class="pt-2">No data available.</p>
+                                <p class="pt-4">No data available.</p>
                             @endif
                         </section>
 
@@ -183,7 +183,7 @@
                                     @endforeach
                                 </ul>
                             @else
-                                <p>No data available.</p>
+                                <p class="pt-4">No data available.</p>
                             @endif
                         </section>
                     </section>

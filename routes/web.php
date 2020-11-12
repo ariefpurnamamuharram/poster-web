@@ -30,7 +30,11 @@ Auth::routes([
     'reset' => false,
 ]);
 
+// Home route.
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+// Category route.
+Route::get('category/{category}', [HomeController::class, 'category'])->name('category');
 
 // File routes
 Route::prefix('file')->group(function () {
