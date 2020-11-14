@@ -158,7 +158,8 @@
 
                         <div class="col-md-10">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="poster" name="poster">
+                                <input type="file" class="custom-file-input @error('poster') is-invalid @enderror"
+                                       id="poster" name="poster">
                                 <label class="custom-file-label" for="poster">Choose file...</label>
                             </div>
 
