@@ -81,23 +81,23 @@
 
                             <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"
                                  aria-labelledby="navbarDropdownCategory">
-                                <a class="dropdown-item" href="{{ route('category', 1) }}">
+                                <a class="dropdown-item" href="{{ route('category', '1') }}">
                                     Diabetes Mellitus
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('category', 2) }}">
+                                <a class="dropdown-item" href="{{ route('category', '2') }}">
                                     Diabetic Foot
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('category', 3) }}">
+                                <a class="dropdown-item" href="{{ route('category', '3') }}">
                                     Metabolic Syndrome
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('category', 4) }}">
+                                <a class="dropdown-item" href="{{ route('category', '4') }}">
                                     Dyslipidemia
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('category', 5) }}">
+                                <a class="dropdown-item" href="{{ route('category', '5') }}">
                                     Obesity
                                 </a>
                             </div>
