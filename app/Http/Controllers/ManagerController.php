@@ -16,7 +16,7 @@ class ManagerController extends Controller
     {
         $posters = Poster::orderBy('total_likes', 'DESC')
             ->orderBy('total_comments', 'DESC')
-            ->paginate(16);
+            ->simplePaginate(16);
 
         return view('managers.posters.main', [
             'posters' => $posters,
