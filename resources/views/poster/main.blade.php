@@ -230,6 +230,103 @@
 
                                                     {{-- Comment replies --}}
                                                     @include('items.reply')
+
+                                                    {{-- Reply section --}}
+                                                    <div class="mt-2">
+                                                        <a href="#collapseComment{{ $comment->id }}-Reply{{ $reply->id }}"
+                                                           data-toggle="collapse"
+                                                           style="color: #0E6177;">Reply</a>
+
+                                                        <div class="collapse"
+                                                             id="collapseComment{{ $comment->id }}-Reply{{ $reply->id }}">
+                                                            <div class="pl-4 pr-4 pt-4 pb-2">
+                                                                <h5>Reply a Comment</h5>
+
+                                                                <hr/>
+
+                                                                {{-- Reply comment form --}}
+                                                                <form action="{{ route('poster.reply') }}" method="post"
+                                                                      enctype="multipart/form-data">
+                                                                    @csrf
+
+                                                                    {{-- Poster ID --}}
+                                                                    <input type="hidden" name="replyPosterID"
+                                                                           value="{{ $poster->id }}">
+
+                                                                    {{-- Comment ID --}}
+                                                                    <input type="hidden" name="replyCommentID"
+                                                                           value="{{ $comment->id }}">
+
+                                                                    {{-- Name --}}
+                                                                    <div class="form-group row">
+                                                                        <div class="col-md-8">
+                                                                            <label for="replyName">
+                                                                                Name<span class="text-danger">*</span>
+                                                                            </label>
+
+                                                                            <input type="text" id="replyName"
+                                                                                   name="replyName"
+                                                                                   class="form-control @error('replyName') is-invalid @enderror"
+                                                                                   placeholder="Your name"
+                                                                                   value="{{ old('replyName') }}"
+                                                                                   required>
+
+                                                                            <span class="invalid-feedback" role="alert">
+                                                                            {{ $errors->first('replyName') }}
+                                                                        </span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    {{-- Email --}}
+                                                                    <div class="form-group row">
+                                                                        <div class="col-md-8">
+                                                                            <label for="replyEmail">
+                                                                                Email<span class="text-danger">*</span>
+                                                                            </label>
+
+                                                                            <input type="text" id="replyEmail"
+                                                                                   name="replyEmail"
+                                                                                   class="form-control @error('replyEmail') is-invalid @enderror"
+                                                                                   placeholder="Your email"
+                                                                                   value="{{ old('replyEmail') }}"
+                                                                                   required>
+
+                                                                            <span class="invalid-feedback" role="alert">
+                                                                            {{ $errors->first('replyEmail') }}
+                                                                        </span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    {{-- Comment --}}
+                                                                    <div class="form-group">
+                                                                        <label for="replyComment">
+                                                                            Comment<span class="text-danger">*</span>
+                                                                        </label>
+
+                                                                        <textarea id="replyComment" name="replyComment"
+                                                                                  class="form-control @error('replyComment') is-invalid @enderror"
+                                                                                  placeholder="Comments"
+                                                                                  rows="5"
+                                                                                  required>{{ old('replyComment') }}</textarea>
+
+                                                                        <span class="invalid-feedback" role="alert">
+                                                                        {{ $errors->first('replyComment') }}
+                                                                    </span>
+                                                                    </div>
+
+                                                                    {{-- Post reply button --}}
+                                                                    <div class="form-group">
+                                                                        <div class="d-flex justify-content-end">
+                                                                            <button type="submit"
+                                                                                    class="btn btn-warning">
+                                                                                Post Reply
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             @endforeach
                                         </td>
