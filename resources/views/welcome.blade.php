@@ -91,8 +91,7 @@
                                                                 <h6 class="card-title">{{ $poster->poster_title }}</h6>
                                                             </a>
 
-                                                            <span class="badge badge-info mt-2">
-                                                @switch($poster->poster_category)
+                                                            <span class="badge badge-info mt-2">@switch($poster->poster_category)
                                                                     @case(1)
                                                                     <span>Diabetes mellitus</span>
                                                                     @break
@@ -109,7 +108,7 @@
                                                                     <span>Obesity</span>
                                                                     @break
                                                                 @endswitch
-                                            </span>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 @endif
@@ -133,8 +132,7 @@
                                                                 <h6 class="card-title">{{ $poster->poster_title }}</h6>
                                                             </a>
 
-                                                            <span class="badge badge-info mt-2">
-                                                @switch($poster->poster_category)
+                                                            <span class="badge badge-info mt-2">@switch($poster->poster_category)
                                                                     @case(1)
                                                                     <span>Diabetes mellitus</span>
                                                                     @break
@@ -151,7 +149,7 @@
                                                                     <span>Obesity</span>
                                                                     @break
                                                                 @endswitch
-                                            </span>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -164,7 +162,7 @@
                                     </div>
                                 </section>
                             @else
-                                <p class="pt-4">No data available.</p>
+                                <p class="pt-2">No data available.</p>
                             @endif
                         </section>
 
@@ -183,7 +181,7 @@
                                     @endforeach
                                 </ul>
                             @else
-                                <p class="pt-4">No data available.</p>
+                                <p class="pt-2">No data available.</p>
                             @endif
                         </section>
                     </section>
