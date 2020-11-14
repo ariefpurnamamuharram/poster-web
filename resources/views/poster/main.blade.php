@@ -116,15 +116,18 @@
                     <hr/>
 
                     {{-- Comment --}}
-                    @if(count($comments) != 0)
-                        <h4>{{ count($comments) }} Responses</h4>
+                    @if(count(PosterComment::where('poster_id', $poster->id)->get()) != 0)
+                        <h4>
+                            {{ count(PosterComment::where('poster_id', $poster->id)->get()) + count(PosterCommentReply::where('poster_id', $poster->id)->get()) }}
+                            Responses
+                        </h4>
 
                         <br/>
 
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <tbody>
-                                @foreach($comments as $comment)
+                                @foreach(PosterComment::where('poster_id', $poster->id)->get() as $comment)
                                     <tr>
                                         <td>
                                             <div>

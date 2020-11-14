@@ -12,11 +12,8 @@ class DisplayController extends Controller
     {
         $poster = Poster::where('id', $posterID)->first();
 
-        $comments = PosterComment::where('poster_id', $posterID)->get();
-
         return view('poster.main', [
             'poster' => $poster,
-            'comments' => $comments,
         ]);
     }
 }
