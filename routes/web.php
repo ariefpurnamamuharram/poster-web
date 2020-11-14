@@ -45,6 +45,9 @@ Route::prefix('file')->group(function () {
         // Comment route.
         Route::post('comment', [CommentController::class, 'commentPoster'])->name('poster.comment');
 
+        // Reply comment route.
+        Route::post('reply', [CommentController::class, 'replyPoster'])->name('poster.reply');
+
         // Vote routes.
         Route::prefix('vote')->group(function () {
             Route::post('like', [VoteController::class, 'like'])->name('poster.vote.like');

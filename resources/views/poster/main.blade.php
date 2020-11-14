@@ -127,24 +127,111 @@
                                 @foreach($comments as $comment)
                                     <tr>
                                         <td>
-                                            <div class="row">
-                                                <div class="col-md-1">
-                                                    <img src="{{ asset('assets/images/avatar.png') }}" height="54px"
-                                                         alt="Avatar">
-                                                </div>
-
-                                                <div class="col-md-11">
-                                        <span><span
-                                                class="font-weight-bold">{{ $comment->name }}</span> says:</span><br/>
-                                                    <span class="text-secondary">{{ date('F j, Y', strtotime($comment->created_at)) }} at {{ date('H:i', strtotime($comment->created_at)) }}</span>
-                                                </div>
-                                            </div>
-
-                                            <br/>
-
                                             <div>
-                                                {{ $comment->comment }}
+                                                {{-- Comment --}}
+                                                @include('items.comment')
+
+                                                {{-- Reply section --}}
+                                                <div class="mt-2">
+                                                    <a href="#collapseReply{{ $comment->id }}" data-toggle="collapse"
+                                                       style="color: #0E6177;">Reply</a>
+
+                                                    <div class="collapse" id="collapseReply{{ $comment->id }}">
+                                                        <div class="pl-4 pr-4 pt-4 pb-2">
+                                                            <h5>Reply a Comment</h5>
+
+                                                            <hr/>
+
+                                                            {{-- Reply comment form --}}
+                                                            <form action="{{ route('poster.reply') }}" method="post"
+                                                                  enctype="multipart/form-data">
+                                                                @csrf
+
+                                                                {{-- Poster ID --}}
+                                                                <input type="hidden" name="replyPosterID"
+                                                                       value="{{ $poster->id }}">
+
+                                                                {{-- Comment ID --}}
+                                                                <input type="hidden" name="replyCommentID"
+                                                                       value="{{ $comment->id }}">
+
+                                                                {{-- Name --}}
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-8">
+                                                                        <label for="replyName">
+                                                                            Name<span class="text-danger">*</span>
+                                                                        </label>
+
+                                                                        <input type="text" id="replyName"
+                                                                               name="replyName"
+                                                                               class="form-control @error('replyName') is-invalid @enderror"
+                                                                               placeholder="Your name"
+                                                                               value="{{ old('replyName') }}" required>
+
+                                                                        <span class="invalid-feedback" role="alert">
+                                                                            {{ $errors->first('replyName') }}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+
+                                                                {{-- Email --}}
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-8">
+                                                                        <label for="replyEmail">
+                                                                            Email<span class="text-danger">*</span>
+                                                                        </label>
+
+                                                                        <input type="text" id="replyEmail"
+                                                                               name="replyEmail"
+                                                                               class="form-control @error('replyEmail') is-invalid @enderror"
+                                                                               placeholder="Your email"
+                                                                               value="{{ old('replyEmail') }}" required>
+
+                                                                        <span class="invalid-feedback" role="alert">
+                                                                            {{ $errors->first('replyEmail') }}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+
+                                                                {{-- Comment --}}
+                                                                <div class="form-group">
+                                                                    <label for="replyComment">
+                                                                        Comment<span class="text-danger">*</span>
+                                                                    </label>
+
+                                                                    <textarea id="replyComment" name="replyComment"
+                                                                              class="form-control @error('replyComment') is-invalid @enderror"
+                                                                              placeholder="Comments"
+                                                                              rows="5"
+                                                                              required>{{ old('replyComment') }}</textarea>
+
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        {{ $errors->first('replyComment') }}
+                                                                    </span>
+                                                                </div>
+
+                                                                {{-- Post reply button --}}
+                                                                <div class="form-group">
+                                                                    <div class="d-flex justify-content-end">
+                                                                        <button type="submit" class="btn btn-warning">
+                                                                            Post Reply
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+
+                                            @foreach(PosterCommentReply::where(['poster_id' => $poster->id, 'comment_id' => $comment->id])->get() as $key => $reply)
+                                                <div class="pl-4">
+                                                    <hr/>
+
+                                                    {{-- Comment replies --}}
+                                                    @include('items.reply')
+                                                </div>
+                                            @endforeach
                                         </td>
                                     </tr>
                                 @endforeach

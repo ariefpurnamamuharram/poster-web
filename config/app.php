@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Poster;
+use App\Models\PosterComment;
+use App\Models\PosterCommentReply;
 use App\Models\SiteSettings;
 
 return [
@@ -228,6 +230,8 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
         'Poster' => Poster::class,
+        'PosterComment' => PosterComment::class,
+        'PosterCommentReply' => PosterCommentReply::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
