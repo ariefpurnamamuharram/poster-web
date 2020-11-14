@@ -7,7 +7,20 @@
         <hr/>
 
         <div class="mt-2">
-            <span>Total poster <span class="badge badge-primary">{{ count(Poster::get()) }}</span></span>
+            <span>
+                <span class="badge badge-success">Total poster <span
+                        class="badge badge-pill badge-light">{{ count(Poster::get()) }}</span></span> |
+                <span class="badge badge-info">Diabetes mellitus <span
+                        class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '1')->get()) }}</span></span> |
+                <span class="badge badge-info">Diabetic foot <span
+                        class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '2')->get()) }}</span></span> |
+                <span class="badge badge-info">Metabolic syndrome <span
+                        class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '3')->get()) }}</span></span> |
+                <span class="badge badge-info">Dyslipidemia <span
+                        class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '4')->get()) }}</span></span> |
+                <span class="badge badge-info">Obesity <span
+                        class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '5')->get()) }}</span></span>
+            </span>
         </div>
 
         <div class="table-responsive pt-3">
