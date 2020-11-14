@@ -73,85 +73,75 @@
 
                     {{-- Poster section --}}
                     <section style="margin-top: 0;">
+
                         {{-- Posters --}}
                         <section>
                             @if(count($posters) != 0)
                                 <section>
-                                    @for($i = 0; $i < ((count($posters) / 3)); $i++)
-                                        <div class="card-deck">
-                                            @foreach($posters as $key => $poster)
-                                                @if(((int) ($loop->iteration / (3 + 1)) == ($i - 1)))
-                                                    <div class="card hvr-grow-shadow shadow">
-                                                        <img class="card-img-top"
-                                                             src="{{ Storage::url($poster->poster_filename) }}"
-                                                             alt="Poster {{ $poster->poster_title }}"/>
-                                                        <div class="card-body">
-                                                            <a href="{{ route('poster.show', $poster->id) }}"
-                                                               class="text-decoration-none text-dark">
-                                                                <h6 class="card-title">{{ $poster->poster_title }}</h6>
-                                                            </a>
-
-                                                            <span class="badge badge-info mt-2">@switch($poster->poster_category)
-                                                                    @case(1)
-                                                                    <span>Diabetes mellitus</span>
-                                                                    @break
-                                                                    @case(2)
-                                                                    <span>Diabetic foot</span>
-                                                                    @break
-                                                                    @case(3)
-                                                                    <span>Metabolic syndrome</span>
-                                                                    @break
-                                                                    @case(4)
-                                                                    <span>Dyslipidemia</span>
-                                                                    @break
-                                                                    @case(5)
-                                                                    <span>Obesity</span>
-                                                                    @break
-                                                                @endswitch
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-
-                                        <br/>
-                                    @endfor
-
-                                    <div class="row">
+                                    {{-- Row 1 --}}
+                                    <div class="row mt-4">
                                         @foreach($posters as $key => $poster)
-                                            @if($loop->iteration > (3 * ((int) (count($posters) / 3))))
+                                            @if($loop->iteration == 1)
                                                 <div class="col-md-4">
-                                                    <div class="card hvr-grow-shadow shadow">
-                                                        <img class="card-img-top"
-                                                             src="{{ Storage::url($poster->poster_filename) }}"
-                                                             alt="Poster {{ $poster->poster_title }}"/>
-                                                        <div class="card-body">
-                                                            <a href="{{ route('poster.show', $poster->id) }}"
-                                                               class="text-decoration-none text-dark">
-                                                                <h6 class="card-title">{{ $poster->poster_title }}</h6>
-                                                            </a>
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
 
-                                                            <span class="badge badge-info mt-2">@switch($poster->poster_category)
-                                                                    @case(1)
-                                                                    <span>Diabetes mellitus</span>
-                                                                    @break
-                                                                    @case(2)
-                                                                    <span>Diabetic foot</span>
-                                                                    @break
-                                                                    @case(3)
-                                                                    <span>Metabolic syndrome</span>
-                                                                    @break
-                                                                    @case(4)
-                                                                    <span>Dyslipidemia</span>
-                                                                    @break
-                                                                    @case(5)
-                                                                    <span>Obesity</span>
-                                                                    @break
-                                                                @endswitch
-                                                            </span>
-                                                        </div>
-                                                    </div>
+                                            @if($loop->iteration == 2)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+
+                                            @if($loop->iteration == 3)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+
+                                    {{-- Row 2 --}}
+                                    <div class="row mt-4">
+                                        @foreach($posters as $key => $poster)
+                                            @if($loop->iteration == 4)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+
+                                            @if($loop->iteration == 5)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+
+                                            @if($loop->iteration == 6)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+
+                                    {{-- Row 3 --}}
+                                    <div class="row mt-4">
+                                        @foreach($posters as $key => $poster)
+                                            @if($loop->iteration == 7)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+
+                                            @if($loop->iteration == 8)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
+                                                </div>
+                                            @endif
+
+                                            @if($loop->iteration == 9)
+                                                <div class="col-md-4">
+                                                    @include('items.poster')
                                                 </div>
                                             @endif
                                         @endforeach
