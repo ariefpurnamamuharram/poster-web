@@ -78,74 +78,29 @@
                         <section>
                             @if(count($posters) != 0)
                                 <section>
-                                    {{-- Row 1 --}}
-                                    <div class="row mt-4">
-                                        @foreach($posters as $key => $poster)
-                                            @if($loop->iteration == 1)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
+                                    @for($i=0; $i < 5; $i++)
+                                        <div class="row mt-4">
+                                            @foreach($posters as $key => $poster)
+                                                @if($loop->iteration == ((3 * $i) + 1))
+                                                    <div class="col-md-4">
+                                                        @include('items.poster')
+                                                    </div>
+                                                @endif
 
-                                            @if($loop->iteration == 2)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
+                                                @if($loop->iteration == ((3 * $i) + 2))
+                                                    <div class="col-md-4">
+                                                        @include('items.poster')
+                                                    </div>
+                                                @endif
 
-                                            @if($loop->iteration == 3)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
-
-                                    {{-- Row 2 --}}
-                                    <div class="row mt-4">
-                                        @foreach($posters as $key => $poster)
-                                            @if($loop->iteration == 4)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-
-                                            @if($loop->iteration == 5)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-
-                                            @if($loop->iteration == 6)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
-
-                                    {{-- Row 3 --}}
-                                    <div class="row mt-4">
-                                        @foreach($posters as $key => $poster)
-                                            @if($loop->iteration == 7)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-
-                                            @if($loop->iteration == 8)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-
-                                            @if($loop->iteration == 9)
-                                                <div class="col-md-4">
-                                                    @include('items.poster')
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
+                                                @if($loop->iteration == ((3 * $i) + 3))
+                                                    <div class="col-md-4">
+                                                        @include('items.poster')
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    @endfor
 
                                     <div class="d-flex justify-content-end mt-4">
                                         {{ $posters->links() }}

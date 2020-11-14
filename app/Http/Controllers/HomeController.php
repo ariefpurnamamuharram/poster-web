@@ -14,7 +14,7 @@ class HomeController extends Controller
         $posters = Poster::orderBy('total_likes', 'DESC')
             ->orderBy('total_comments', 'DESC')
             ->orderBy('updated_at', 'DESC')
-            ->simplePaginate(9);
+            ->simplePaginate(15);
 
         // Posters comments
         $postersComments = PosterComment::orderBy('created_at', 'DESC')->get()->take(5);
@@ -32,7 +32,7 @@ class HomeController extends Controller
             ->orderBy('total_likes', 'DESC')
             ->orderBy('total_comments', 'DESC')
             ->orderBy('updated_at', 'DESC')
-            ->simplePaginate(9);
+            ->simplePaginate(15);
 
         // Poster comments
         $postersComments = PosterComment::orderBy('created_at', 'DESC')->get()->take(5);
