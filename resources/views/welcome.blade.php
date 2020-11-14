@@ -76,6 +76,22 @@
 
                         {{-- Posters --}}
                         <section>
+                            <section class="mt-4">
+                                <span>
+                                    Category:
+                                    <a href="{{ route('category', '1') }}" class="badge badge-info">Diabetes mellitus <span
+                                            class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '1')->get()) }}</span></a> |
+                                    <a href="{{ route('category', '2') }}" class="badge badge-info">Diabetic foot <span
+                                            class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '2')->get()) }}</span></a> |
+                                    <a href="{{ route('category', '3') }}" class="badge badge-info">Metabolic syndrome <span
+                                            class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '3')->get()) }}</span></a> |
+                                    <a href="{{ route('category', '4') }}" class="badge badge-info">Dyslipidemia <span
+                                            class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '4')->get()) }}</span></a> |
+                                    <a href="{{ route('category', '5') }}" class="badge badge-info">Obesity <span
+                                            class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '5')->get()) }}</span></a>
+                                </span>
+                            </section>
+
                             @if(count($posters) != 0)
                                 <section>
                                     @for($i=0; $i < 5; $i++)
@@ -107,12 +123,12 @@
                                     </div>
                                 </section>
                             @else
-                                <p class="pt-2">No data available.</p>
+                                <p class="pt-4">No data available.</p>
                             @endif
                         </section>
 
                         {{-- Recent comments --}}
-                        <section style="margin-top: 24px;">
+                        <section style="margin-top: 32px;">
                             <h6 class="font-weight-bold">Recent comments</h6>
 
                             @if(count($postersComments) != 0)
