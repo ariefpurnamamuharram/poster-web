@@ -102,6 +102,10 @@
                                 <input type="file" class="custom-file-input" id="poster" name="poster" required>
                                 <label class="custom-file-label" for="poster">Choose file...</label>
                             </div>
+
+                            <span class="invalid-feedback" role="alert">
+                                {{ $errors->first('poster') }}
+                            </span>
                         </div>
                     </div>
 
