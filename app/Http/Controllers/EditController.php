@@ -31,7 +31,7 @@ class EditController extends Controller
             'authors' => 'required|string|min:6|max:180',
             'affiliations' => 'required|string|min:12|max:360',
             'category' => 'required|numeric',
-            'poster' => 'nullable|image|max:6000',
+            'poster' => 'nullable|image|max:24000',
             'abstract' => 'nullable|min:54|max:2048',
             'keywords' => 'nullable|min:8|max:180',
         ]);
