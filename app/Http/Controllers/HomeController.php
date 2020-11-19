@@ -16,11 +16,15 @@ class HomeController extends Controller
             ->orderBy('updated_at', 'DESC')
             ->simplePaginate(15);
 
+        // Get recent liked posters.
+        $recentLikedPosters = Poster::orderBy('updated_at', 'DESC')->get()->take(5);
+
         // Posters comments
         $postersComments = PosterComment::orderBy('created_at', 'DESC')->get()->take(5);
 
         return view('welcome', [
             'posters' => $posters,
+            'recentLikedPosters' => $recentLikedPosters,
             'postersComments' => $postersComments,
         ]);
     }
@@ -34,11 +38,15 @@ class HomeController extends Controller
             ->orderBy('updated_at', 'DESC')
             ->simplePaginate(15);
 
+        // Get recent liked posters.
+        $recentLikedPosters = Poster::orderBy('updated_at', 'DESC')->get()->take(5);
+
         // Poster comments
         $postersComments = PosterComment::orderBy('created_at', 'DESC')->get()->take(5);
 
         return view('welcome', [
             'posters' => $posters,
+            'recentLikedPosters' => $recentLikedPosters,
             'postersComments' => $postersComments,
         ]);
     }

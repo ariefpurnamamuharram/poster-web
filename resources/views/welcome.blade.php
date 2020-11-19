@@ -79,11 +79,13 @@
                             <section class="mt-4">
                                 <span>
                                     Category:
-                                    <a href="{{ route('category', '1') }}" class="badge badge-info">Diabetes mellitus <span
+                                    <a href="{{ route('category', '1') }}"
+                                       class="badge badge-info">Diabetes mellitus <span
                                             class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '1')->get()) }}</span></a> |
                                     <a href="{{ route('category', '2') }}" class="badge badge-info">Diabetic foot <span
                                             class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '2')->get()) }}</span></a> |
-                                    <a href="{{ route('category', '3') }}" class="badge badge-info">Metabolic syndrome <span
+                                    <a href="{{ route('category', '3') }}"
+                                       class="badge badge-info">Metabolic syndrome <span
                                             class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '3')->get()) }}</span></a> |
                                     <a href="{{ route('category', '4') }}" class="badge badge-info">Dyslipidemia <span
                                             class="badge badge-pill badge-light">{{ count(Poster::where('poster_category', '4')->get()) }}</span></a> |
@@ -124,6 +126,25 @@
                                 </section>
                             @else
                                 <p class="pt-4">No data available.</p>
+                            @endif
+                        </section>
+
+                        {{-- Recent liked posters --}}
+                        <section style="margin-top: 32px;">
+                            <h6 class="font-weight-bold">Recent liked posters</h6>
+
+                            @if(count($recentLikedPosters) != 0)
+                                <ul>
+                                    @foreach($recentLikedPosters as $poster)
+                                        <li><a href="{{ route('poster.show', $poster->id) }}"
+                                               style="color: #0E6177;" class="text-decoration-none">
+                                                {{ $poster->poster_title }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <p class="pt-2">No data available.</p>
                             @endif
                         </section>
 
