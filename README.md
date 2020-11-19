@@ -25,9 +25,11 @@ ePoster web platform for Endocrine and Metabolism Division, Department of Intern
 
 ## System update
 For future system update, you can use `.sysupdate.sh` shell script included in this repository. In order use it please follow this steps for the first-time setup:
+
 1. Change file permission by `chmod +x sysupdate.sh`.
-2. Run shell script by using `./sysupdate.sh`
-Now you can do system updates automatically by typing `./sysupdate.sh`.
+2. Run shell script by using `./sysupdate.sh`.
+
+Now you can do system update automatically by typing `./sysupdate.sh`.
 
 ## Administrator account
 You can login as administrator by clicking `login` button on top right corner of navigation bar or simply by adding `/login` in the web address. Here is the default administrator account:
