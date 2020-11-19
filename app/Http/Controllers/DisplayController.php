@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poster;
-use App\Models\PosterComment;
-use Illuminate\Http\Request;
 
 class DisplayController extends Controller
 {
