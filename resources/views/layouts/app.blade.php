@@ -125,7 +125,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownUpload" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <span class="text-dark">Uploads</span>
+                                <span class="text-dark">Upload</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-left animate__fadeInDown animate__animated"

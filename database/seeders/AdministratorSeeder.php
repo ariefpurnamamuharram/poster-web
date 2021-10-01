@@ -18,9 +18,9 @@ class AdministratorSeeder extends Seeder
     {
         $users = [
             [
-                'name' => 'Dummy',
-                'email' => 'dummy@dummy.com',
-                'password' => 'dummy123456',
+                'name' => 'Metabolik Endokrin',
+                'email' => 'metabolikendokrinrscm@gmail.com',
+                'password' => 'administrator123456',
             ],
         ];
 
