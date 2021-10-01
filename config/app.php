@@ -229,6 +229,7 @@ return [
         'SiteSettings' => SiteSettings::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
+        'SystemVersion' => \App\Models\SystemVersion::class,
         'Poster' => Poster::class,
         'PosterComment' => PosterComment::class,
         'PosterCommentReply' => PosterCommentReply::class,
