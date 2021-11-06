@@ -14,7 +14,7 @@
                     {{-- Carousel contents --}}
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="{{ asset('assets/images/banner-jdm-2020.png') }}"
+                            <img class="d-block w-100" src="{{ asset('assets/images/banner-jdm-2021.jpeg') }}"
                                  alt="Jakarta Diabetes Meeting 2020">
                         </div>
                     </div>

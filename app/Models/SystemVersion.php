@@ -9,7 +9,7 @@ class SystemVersion extends Model
 {
     use HasFactory;
 
-    public const RELEASE_VERSION = "0.0.3";
+    public const RELEASE_VERSION = "0.0.4";
 
     public const RELEASE_DATE = "Oct 2021";
 }

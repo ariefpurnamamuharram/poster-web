@@ -211,11 +211,10 @@
     <hr/>
 
     <div class="d-flex justify-content-center">
-        <span class="text-center"><span class="text-nowrap">Copyright <span class="copyright">&copy;</span> 2020 <a
+        <span class="text-center"><span class="text-nowrap">Copyright <span class="copyright">&copy;</span> 2021 <a
                     class="text-dark"
                     href="https://metabolikendokrin.com"
-                    target="_blank">Divisi Metabolik Endokrin FKUI-RSCM</a></span> by <span class="text-nowrap"><a
-                    class="text-dark" href="https://linkedin.com/in/ariefpurnamamuharram" target="_blank">Arief Purnama Muharram</a></span></span>
+                    target="_blank">Divisi Metabolik Endokrin FKUI-RSCM</a></span></span>
     </div>
 </footer>
 
